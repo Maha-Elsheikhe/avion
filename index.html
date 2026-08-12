@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avion | Home</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Avion home">Avion</a>
+    <a class="cart-link" href="./html/cart.html">Cart <span id="cartCount" aria-label="items in cart">0</span></a>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="Product controls">
+      <div class="field search-field"><label for="searchInput">Search products</label><input id="searchInput" type="search" placeholder="Look for your item"></div>
+      <div class="field"><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="all">All categories</option></select></div>
+      <div class="field"><label for="sortPrice">Sort price</label><select id="sortPrice">
+        <option value="default">Default order</option><option value="asc">Price: low to high</option><option value="desc">Price: high to low</option>
+      </select></div>
+      <button id="openAddForm" type="button">Add product</button>
+    </section>
+
+    <p id="status" class="status" role="status">Loading products…</p>
+    <section id="productGrid" class="product-grid" aria-live="polite"></section>
+    <div class="show-more-wrap"><button id="showMore" type="button" class="secondary" hidden>Show more</button></div>
+    <section id="details" class="details-panel" hidden></section>
+  </main>
+
+  <dialog id="productDialog">
+    <form id="productForm" method="dialog">
+      <div class="dialog-heading">
+        <h2 id="dialogTitle">Add product</h2>
+        <button type="button" id="closeDialog" class="icon-button" aria-label="Close">×</button>
+      </div>
+      <input id="productId" type="hidden">
+      <label for="productImage">Image URL</label>
+      <input id="productImage" type="url" placeholder="https://example.com/image.jpg" required>
+      <label for="productTitle">Title</label>
+      <input id="productTitle" type="text" minlength="2" required>
+      <label for="productPrice">Price (USD)</label>
+      <input id="productPrice" type="number" min="0.01" step="0.01" required>
+      <label for="productCategory">Category</label>
+      <select id="productCategory" required></select>
+      <label for="productDescription">Description</label>
+      <textarea id="productDescription" rows="5" minlength="5" required></textarea>
+      <p id="formError" class="form-error" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" id="cancelDialog" class="secondary">Cancel</button>
+        <button type="submit">Save product</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="./index.js"></script>
+</body>
+</html>

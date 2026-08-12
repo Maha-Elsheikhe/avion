@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/cart.css">
+  <title>Avion | Cart</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Avion</a>
+    <a class="back-link" href="../index.html">← Continue shopping</a>
+  </header>
+  <main>
+    <h1>Your shopping cart</h1>
+    <p id="emptyCart" class="empty-cart" hidden>Your cart is empty. <a href="../index.html">Browse products</a></p>
+    <section id="cartItems" aria-live="polite"></section>
+    <section id="cartSummary" class="cart-summary" hidden>
+      <p>Taxes and shipping are calculated at checkout.</p>
+      <div><strong id="subtotal">Subtotal $0.00</strong><button id="checkout" type="button">Checkout</button></div>
+    </section>
+  </main>
+  <script src="../js/cart.js"></script>
+</body>
+</html>
